@@ -1,0 +1,199 @@
+.navbar{
+
+    position: fixed;
+
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 95%;
+    max-width: 1700px;
+
+    height: 78px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 0 35px;
+
+    background: var(--section-bg);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 22px;
+
+    border: 1px solid var(--border);
+
+    z-index: 1000;
+}
+
+/* Center Menu */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+    margin-right:40px;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:var(--text-primary);
+
+    font-weight:500;
+
+    font-size:1rem;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+
+    color:var(--accent);
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:30px;
+
+    background:var(--accent);
+
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+}
+
+/* Right */
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+/* Icons */
+
+.social-icon,
+.theme-toggle{
+
+    width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(0,217,255,.08);
+
+    border:1px solid rgba(0,217,255,.15);
+
+    color:var(--text-primary);
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.theme-toggle{
+
+    outline:none;
+}
+
+.social-icon:hover,
+.theme-toggle:hover{
+
+    background:var(--accent);
+
+    color:#081329;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,217,255,.25);
+}
+
+.theme-toggle i{
+
+    transition:.35s;
+}
+
+.theme-toggle:hover i{
+
+    transform:rotate(180deg);
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.nav-links{
+
+gap:24px;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.navbar{
+
+grid-template-columns:auto auto;
+
+padding:0 20px;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+.logo{
+
+font-size:1.7rem;
+
+}
+
+.social-icon,
+.theme-toggle{
+
+width:42px;
+height:42px;
+
+}
+
+}

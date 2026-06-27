@@ -1,0 +1,119 @@
+.projects-section {
+  padding: 80px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: var(--bg-color); /* ✅ variable */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  color: var(--text-primary); /* ✅ variable */
+}
+
+.section-header p {
+  color: var(--text-secondary); /* ✅ variable */
+  margin-top: 10px;
+}
+
+/* PERFECT 3 COLUMN GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+.project-card {
+  background: var(--card-bg);      /* ✅ variable */
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border); /* ✅ variable */
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow); /* ✅ variable */
+}
+
+/* SAME IMAGE SIZE */
+.project-image {
+  width: 100%;
+  height: 260px;
+  flex-shrink: 0;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.project-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tech-stack span {
+  padding: 10px 18px;
+  border: 1px solid var(--accent); /* ✅ variable */
+  border-radius: 30px;
+  color: var(--accent);            /* ✅ variable */
+  font-size: 14px;
+}
+
+.project-content h3 {
+  color: var(--text-primary); /* ✅ variable */
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.project-content p {
+  color: var(--text-secondary); /* ✅ variable */
+  line-height: 1.7;
+  flex-grow: 1;
+}
+
+/* TABLET */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    height: auto;
+  }
+
+  .project-content h3 {
+    min-height: auto;
+  }
+}

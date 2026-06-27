@@ -1,0 +1,128 @@
+<section class="contact-section" id="contact">
+
+  <div class="section-header">
+    <h2>Get In Touch</h2>
+    <div class="underline"></div>
+  </div>
+
+  <div class="contact-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="contact-info">
+
+      <h3>Contact Information</h3>
+
+      <p class="contact-text">
+        Have an exciting project idea, a job opportunity,
+        or simply want to say hello? Drop me a message
+        and connect through social channels. I usually
+        respond within 24 hours.
+      </p>
+
+      <!-- EMAIL -->
+
+<a
+  href="mailto:jiyaaapk@gmail.com"
+  class="contact-link">
+
+  <div class="info-item">
+
+    <div class="icon">
+      <i class="fas fa-envelope"></i>
+    </div>
+
+    <div>
+      <span>EMAIL</span>
+    </div>
+
+  </div>
+
+</a>
+
+
+
+      <!-- GITHUB -->
+
+      <a
+        href="https://github.com/najiya-nazin"
+        target="_blank"
+        class="contact-link">
+
+        <div class="info-item">
+          <div class="icon">
+            <i class="fab fa-github"></i>
+          </div>
+
+          <div>
+            <span>GITHUB</span>
+          </div>
+        </div>
+
+      </a>
+
+      <!-- LINKEDIN -->
+
+      <a
+        href="https://linkedin.com/in/najiya-nasrin-pk"
+        target="_blank"
+        class="contact-link">
+
+        <div class="info-item">
+          <div class="icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+
+          <div>
+            <span>LINKEDIN</span>
+          </div>
+        </div>
+
+      </a>
+
+      <!-- LOCATION -->
+
+      <div class="info-item">
+        <div class="icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+
+        <div>
+          <span>PALAKKAD,
+             KERALA</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="contact-form">
+
+      <h3>Send a Message</h3>
+
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+
+        <div class="row">
+          <input type="text" placeholder="Your Name" name="name" ngModel>
+          <input type="email" placeholder="Your Email" name="email" ngModel>
+        </div>
+
+        <input type="text" placeholder="Subject" name="subject" ngModel>
+        <textarea rows="7" placeholder="Write your message here..." name="message" ngModel></textarea>
+
+        <button type="submit">
+          <i class="fas fa-paper-plane"></i>
+          Send Message
+        </button>
+      </form>
+
+      <p *ngIf="submitted" class="success-message">
+       Thanks for reaching out! I’ll get back soon.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>

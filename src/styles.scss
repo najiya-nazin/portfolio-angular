@@ -1,1 +1,431 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+/* =====================================================
+   CSS VARIABLES
+===================================================== */
+
+:root{
+
+  /* Background */
+
+  --bg-color:#050B1F;
+  --section-bg:#081329;
+  --card-bg:#101D37;
+
+  /* Text */
+
+  --text-primary:#FFFFFF;
+  --text-secondary:#AAB7D8;
+
+  /* Accent */
+
+  --accent:#00D9FF;
+  --accent2:#6C63FF;
+
+  /* Border */
+
+  --border:rgba(255,255,255,.08);
+
+  /* Shadow */
+
+  --shadow:
+      0 20px 45px rgba(0,0,0,.18);
+
+  /* Radius */
+
+  --radius:24px;
+
+}
+
+/* =====================================================
+   LIGHT THEME
+===================================================== */
+
+body.light-theme{
+
+  --bg-color:#F8FAFC;
+  --section-bg:#FFFFFF;
+  --card-bg:#FFFFFF;
+
+  --text-primary:#111827;
+  --text-secondary:#64748B;
+
+  --accent:#00B8E6;
+  --accent2:#5B5FFF;
+
+  --border:rgba(15,23,42,.08);
+
+  --shadow:
+      0 20px 40px rgba(15,23,42,.08);
+
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+
+  margin:0;
+  padding:0;
+
+  box-sizing:border-box;
+
+}
+
+html{
+
+  scroll-behavior:smooth;
+
+}
+
+body{
+
+  font-family:'Outfit',sans-serif;
+
+  background:var(--bg-color);
+
+  color:var(--text-primary);
+
+  transition:
+
+      background .35s ease,
+
+      color .35s ease;
+
+  overflow-x:hidden;
+
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+section{
+
+  padding:110px 8%;
+
+}
+
+.container{
+
+  width:100%;
+
+  max-width:1400px;
+
+  margin:auto;
+
+}
+
+img{
+
+  max-width:100%;
+
+  display:block;
+
+}
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+h1{
+
+  color:var(--text-primary);
+
+  font-size:clamp(3.5rem,6vw,5.5rem);
+
+  font-weight:800;
+
+  line-height:1.1;
+
+}
+
+h2{
+
+  color:var(--text-primary);
+
+  font-size:clamp(2.4rem,4vw,3.4rem);
+
+  font-weight:700;
+
+}
+
+h3{
+
+  color:var(--text-primary);
+
+  font-size:1.5rem;
+
+  font-weight:600;
+
+}
+
+p{
+
+  color:var(--text-secondary);
+
+  line-height:1.8;
+
+  font-size:1.05rem;
+
+}
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-header{
+
+  text-align:center;
+
+  margin-bottom:70px;
+
+}
+
+.section-header h2{
+
+  margin-bottom:18px;
+
+}
+
+.section-header p{
+
+  max-width:650px;
+
+  margin:auto;
+
+}
+
+.underline{
+
+  width:90px;
+
+  height:5px;
+
+  margin:auto;
+
+  border-radius:30px;
+
+  background:linear-gradient(
+
+      90deg,
+
+      var(--accent),
+
+      var(--accent2)
+
+  );
+
+}
+
+/* =====================================================
+   GLASS CARD
+===================================================== */
+
+.glass-card{
+
+  background:var(--card-bg);
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius);
+
+  backdrop-filter:blur(18px);
+
+  transition:.35s;
+
+}
+
+.glass-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:var(--shadow);
+
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-btn{
+
+  display:inline-flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  height:56px;
+
+  padding:0 32px;
+
+  border-radius:50px;
+
+  border:none;
+
+  cursor:pointer;
+
+  text-decoration:none;
+
+  color:white;
+
+  font-weight:600;
+
+  background:
+
+  linear-gradient(
+
+      135deg,
+
+      var(--accent),
+
+      var(--accent2)
+
+  );
+
+  transition:.35s;
+
+}
+
+.primary-btn:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:
+
+      0 10px 30px rgba(0,217,255,.28);
+
+}
+
+.secondary-btn{
+
+  display:inline-flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  height:56px;
+
+  padding:0 32px;
+
+  border-radius:50px;
+
+  text-decoration:none;
+
+  border:2px solid var(--accent);
+
+  color:var(--accent);
+
+  transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+  background:var(--accent);
+
+  color:#081329;
+
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+  width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+  background:var(--bg-color);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:linear-gradient(
+
+      var(--accent),
+
+      var(--accent2)
+
+  );
+
+  border-radius:20px;
+
+}
+
+/* =====================================================
+   TEXT SELECTION
+===================================================== */
+
+::selection{
+
+  background:var(--accent);
+
+  color:#081329;
+
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+.fade-up{
+
+  animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+  from{
+
+      opacity:0;
+
+      transform:translateY(40px);
+
+  }
+
+  to{
+
+      opacity:1;
+
+      transform:translateY(0);
+
+  }
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+section{
+
+padding:90px 6%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+section{
+
+padding:80px 5%;
+
+}
+
+}

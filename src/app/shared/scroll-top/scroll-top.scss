@@ -1,0 +1,43 @@
+.scroll-top {
+
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #00bfff,
+    #4a8dff
+  );
+
+  color: white;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  border: 2px solid white;
+
+  z-index: 1000;
+
+  box-shadow:
+  0 0 25px rgba(0,212,255,.5);
+
+  transition: .3s;
+}
+
+.scroll-top:hover {
+
+  transform: translateY(-6px) scale(1.05);
+}
+
+
+

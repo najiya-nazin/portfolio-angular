@@ -1,0 +1,56 @@
+<nav class="navbar">
+
+  <!-- Center Navigation -->
+  <div class="nav-links">
+
+    <a href="#home">Home</a>
+
+    <a href="#about">About</a>
+
+    <a href="#skills">Skills</a>
+
+    <a href="#projects">Projects</a>
+
+    <a href="#contact">Contact</a>
+
+  </div>
+
+  <!-- Right Side -->
+  <div class="nav-right">
+
+    <a
+      href="https://github.com/najiya-nazin"
+      target="_blank"
+      class="social-icon"
+      aria-label="GitHub">
+
+      <i class="fab fa-github"></i>
+
+    </a>
+
+    <a
+      href="https://linkedin.com/in/najiya-nasrin-pk"
+      target="_blank"
+      class="social-icon"
+      aria-label="LinkedIn">
+
+      <i class="fab fa-linkedin-in"></i>
+
+    </a>
+
+    <button
+      class="theme-toggle"
+      (click)="toggleTheme()"
+      aria-label="Toggle Theme">
+
+      <i
+        class="fas"
+        [class.fa-sun]="theme.darkMode()"
+        [class.fa-moon]="!theme.darkMode()">
+      </i>
+
+    </button>
+
+  </div>
+
+</nav>
