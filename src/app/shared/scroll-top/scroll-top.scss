@@ -1,43 +1,38 @@
 .scroll-top {
-
   position: fixed;
-
   right: 30px;
   bottom: 30px;
 
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
 
-  border: none;
-
+  border: 1.5px solid rgba(0, 217, 255, 0.35);
   border-radius: 50%;
 
-  background: linear-gradient(
-    135deg,
-    #00bfff,
-    #4a8dff
-  );
+  background: rgba(8, 19, 41, 0.95); // Matches your background
+  backdrop-filter: blur(10px);
 
-  color: white;
-
+  color: #00d9ff;
   font-size: 24px;
-
   cursor: pointer;
-
-  border: 2px solid white;
 
   z-index: 1000;
 
   box-shadow:
-  0 0 25px rgba(0,212,255,.5);
+    0 0 12px rgba(0, 217, 255, 0.18),
+    inset 0 0 8px rgba(0, 217, 255, 0.08);
 
-  transition: .3s;
+  transition: all 0.3s ease;
 }
 
 .scroll-top:hover {
+  transform: translateY(-5px) scale(1.08);
 
-  transform: translateY(-6px) scale(1.05);
+  background: #0b1f3a;
+
+  border-color: #00d9ff;
+
+  box-shadow:
+    0 0 18px rgba(0, 217, 255, 0.35),
+    0 0 35px rgba(0, 217, 255, 0.2);
 }
-
-
-
