@@ -138,7 +138,7 @@
 
   <button
     type="submit"
-    [disabled]="contactForm.invalid || sending">
+    [disabled]="sending || contactForm.invalid">
 
     <i class="fas fa-paper-plane"></i>
 
@@ -148,13 +148,15 @@
 
 </form>
 
-<p *ngIf="submitted" class="success-message">
-  Thanks for reaching out! I'll get back soon.
-</p>
+<!-- SUCCESS MESSAGE -->
+<div *ngIf="submitted" class="success-message">
+  ✓ Thanks for reaching out! Your message has been sent successfully.
+</div>
 
-<p *ngIf="errorMessage" class="error-message">
+<!-- ERROR MESSAGE -->
+<div *ngIf="errorMessage" class="error-message">
   {{ errorMessage }}
-</p>
+</div>
 
     </div>
 

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, NgZone, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
 @Component({
@@ -11,6 +11,8 @@ import emailjs from '@emailjs/browser';
   styleUrl: './contact.scss'
 })
 export class ContactComponent {
+
+  @ViewChild('contactForm') contactForm!: NgForm;
 
   submitted = false;
   sending = false;
@@ -23,7 +25,9 @@ export class ContactComponent {
     message: ''
   };
 
-  async onSubmit() {
+  constructor(private ngZone: NgZone) {}
+
+  onSubmit() {
 
     if (this.sending) {
       return;
@@ -33,6 +37,7 @@ export class ContactComponent {
     this.submitted = false;
     this.errorMessage = '';
 
+    // These names MUST match your EmailJS template variables
     const templateParams = {
       name: this.formData.name,
       email: this.formData.email,
@@ -41,40 +46,57 @@ export class ContactComponent {
       time: new Date().toLocaleString()
     };
 
-    try {
+    emailjs.send(
+      'service_fiz0t2q',
+      'template_cejpqlh',
+      templateParams,
+      {
+        publicKey: '2ky_jQ8FZenBVZkYd'
+      }
+    )
+    .then((response) => {
 
-      await emailjs.send(
-        'service_fiz0t2q',
-        'template_cejpqlh',
-        templateParams,
-        {
-          publicKey: '2ky_jQ8FZenBVZkYd'
-        }
-      );
+      console.log('Email sent successfully:', response);
 
-      this.submitted = true;
+      // Force Angular UI update
+      this.ngZone.run(() => {
 
-      this.formData = {
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      };
+        this.sending = false;
+        this.submitted = true;
+        this.errorMessage = '';
 
+        // Completely reset Angular form
+        this.contactForm.resetForm();
+
+        console.log('Form reset successfully');
+        console.log('Success message should now be visible');
+
+      });
+
+      // Hide success message after 5 seconds
       setTimeout(() => {
-        this.submitted = false;
-      }, 2000);
 
-    } catch (error) {
+        this.ngZone.run(() => {
+          this.submitted = false;
+        });
+
+      }, 3000);
+
+    })
+    .catch((error) => {
 
       console.error('EmailJS Error:', error);
 
-      this.errorMessage =
-        'Message could not be sent. Please try again.';
+      this.ngZone.run(() => {
 
-    } finally {
+        this.sending = false;
+        this.submitted = false;
 
-      this.sending = false;
-    }
+        this.errorMessage =
+          'Unable to send your message. Please try again later.';
+
+      });
+
+    });
   }
 }
