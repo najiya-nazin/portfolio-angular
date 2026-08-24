@@ -103,23 +103,58 @@
 
       <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
 
-        <div class="row">
-          <input type="text" placeholder="Your Name" name="name" ngModel>
-          <input type="email" placeholder="Your Email" name="email" ngModel>
-        </div>
+  <div class="row">
 
-        <input type="text" placeholder="Subject" name="subject" ngModel>
-        <textarea rows="7" placeholder="Write your message here..." name="message" ngModel></textarea>
+    <input
+      type="text"
+      placeholder="Your Name"
+      name="name"
+      [(ngModel)]="formData.name"
+      required>
 
-        <button type="submit">
-          <i class="fas fa-paper-plane"></i>
-          Send Message
-        </button>
-      </form>
+    <input
+      type="email"
+      placeholder="Your Email"
+      name="email"
+      [(ngModel)]="formData.email"
+      required>
 
-      <p *ngIf="submitted" class="success-message">
-       Thanks for reaching out! I’ll get back soon.
-      </p>
+  </div>
+
+  <input
+    type="text"
+    placeholder="Subject"
+    name="subject"
+    [(ngModel)]="formData.subject"
+    required>
+
+  <textarea
+    rows="7"
+    placeholder="Write your message here..."
+    name="message"
+    [(ngModel)]="formData.message"
+    required>
+  </textarea>
+
+  <button
+    type="submit"
+    [disabled]="contactForm.invalid || sending">
+
+    <i class="fas fa-paper-plane"></i>
+
+    {{ sending ? 'Sending...' : 'Send Message' }}
+
+  </button>
+
+</form>
+
+<p *ngIf="submitted" class="success-message">
+  Thanks for reaching out! I'll get back soon.
+</p>
+
+<p *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</p>
 
     </div>
 
