@@ -14,7 +14,7 @@ export class ProjectsComponent {
 
      {
     title: 'SurgiTrace',
-    image: 'assets/surgitrace.png',
+    image: 'assets/sves.png',
     tech: ['Django', 'DRF', 'YOLO', 'Gemma AI'],
     description:
       'Built an AI‑powered surgical video analysis platform that automatically detects key events in surgical recordings and generates intelligent medical summaries. Enhanced hospital workflows with secure role‑based access, audit logging and scalable background processing — reducing manual reporting time and improving accuracy in clinical documentation.',

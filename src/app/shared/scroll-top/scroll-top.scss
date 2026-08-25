@@ -1,12 +1,12 @@
 .scroll-top {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
+  right: 10px;
+  bottom: 10px;
 
   width: 50px;
   height: 50px;
 
-  border: 1.5px solid rgba(0, 217, 255, 0.35);
+  border: 1px solid rgba(0, 217, 255, 0.35);
   border-radius: 50%;
 
   background: rgba(8, 19, 41, 0.95); // Matches your background
@@ -32,7 +32,7 @@
 
   border-color: #00d9ff;
 
-  box-shadow:
-    0 0 18px rgba(0, 217, 255, 0.35),
-    0 0 35px rgba(0, 217, 255, 0.2);
+  // box-shadow:
+  //   0 0 18px rgba(0, 217, 255, 0.35),
+  //   0 0 35px rgba(0, 217, 255, 0.2);
 }
